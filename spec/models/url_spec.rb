@@ -38,4 +38,10 @@ RSpec.describe Url, type: :model do
     expect(urls.uniq.size).to be(epochs + 1)
     expect(short_urls.uniq.size).to be(epochs + 1)
   end
+
+  it 'accepts propery formed URL' do
+    expect(@url).to be_a(Url)
+  end
+
+
 end
