@@ -1,2 +1,14 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1>short url</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <h4>Input URL to make short</h4>
+    </div>
+    <div class="col-md-offset-1 col-md-5">
+      <%= form_with model: Url.new do |form|%>
+        <%= form.text_field :url%>
+        <%= form.submit %>
+      <% end%>
+    </div>
+  </div>
+</div>
