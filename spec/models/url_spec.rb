@@ -40,7 +40,13 @@ RSpec.describe Url, type: :model do
   end
 
   it 'accepts propery formed URL' do
-    expect(@url).to be_a(Url)
+    expect(Url.create(url: 'http://www.yahoo.com.in?q=1&a=2').errors.messages.size).to eq(0)
+    expect(Url.create(url: 'https://www.yahoo.com.in?q=1&a=2').errors.messages.size).to eq(0)
+  end
+
+  it 'cannot accept malformed URL' do
+    expect(Url.create(url: 'ttp://www.yahoo.com.in?q=1&a=2').errors.messages.size).to be >= 1
+    expect(Url.create(url: 'www.yahoo.com.in?q=1&a=2').errors.messages.size).to be >= 1
   end
 
 
