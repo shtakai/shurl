@@ -14,8 +14,8 @@ RSpec.describe Url, type: :model do
     expect(new_url.valid?).to be_falsy
   end
 
-  it 'makes new short_url (24 * (4/3) letters)' do
-    letters = 24 * 4 / 3
+  it 'makes new short_url 10 letters)' do
+    letters = 10
     expect(@url.short_url).to be_a(String)
     expect(@url.short_url.size).to be(letters)
   end
