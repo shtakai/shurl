@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-offset-1 col-md-5">
       <%= form_with model: Url.new do |form|%>
-        <%= form.text_field :url%>
+        <%= form.text_field :url, placeholder: 'enter URL' %>
         <%= form.submit %>
       <% end%>
     </div>
