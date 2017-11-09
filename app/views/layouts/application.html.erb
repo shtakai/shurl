@@ -9,6 +9,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div>
+        <h2>
+          <%= link_to 'TOP', root_path %>
+        </h2>
+      <div>
+      <% if flash.present? %>
+        <div class="container">
+          <% flash.each do |key, value| %>
+            <h2>
+              <span class="label label-default"><%= value %><span>
+            </h2>
+          <% end %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
