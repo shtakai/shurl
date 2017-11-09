@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shorturl</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div>
+        <h2>
+          <%= link_to 'TOP', root_path %>
+        </h2>
+      <div>
+      <% if flash.present? %>
+        <div class="container">
+          <% flash.each do |key, value| %>
+            <h2>
+              <span class="label label-default"><%= value %><span>
+            </h2>
+          <% end %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
