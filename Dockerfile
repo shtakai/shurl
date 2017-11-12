@@ -14,3 +14,4 @@ ENV APP /myapp
 RUN mkdir -p $APP
 WORKDIR $APP
 ADD . $APP
+RUN mkdir -p tmp/sockets
