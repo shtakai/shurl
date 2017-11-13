@@ -26,7 +26,7 @@ RUN mkdir -p \
       /app/public/assets/ \
       /app/tmp/cache/assets/ \
       /app/tmp/sockets/
-ENV RAILS_ENV=staging
+ENV RAILS_ENV=production
 ENV RAILS_LOG_TO_STDOUT=1
 ENV RAILS_SERVE_STATIC_FILES=1
 RUN bundle exec rake assets:precompile
