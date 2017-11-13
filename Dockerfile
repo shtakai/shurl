@@ -18,8 +18,8 @@ RUN \
   chmod uog+r /etc/gemrc && \
   bundle config --global build.nokogiri --use-system-libraries && \
   bundle config --global jobs 4 && \
-  bundle install && \
+  bundle install --without test development  && \
+  bundle exec rails app:update:bin && \
   rm -rf ~/.gem
-RUN bundle install
 RUN rails assets:precompile RAILS_ENV=production
 ADD . /myapp
